@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
+import { Spinner } from "keep-react";
 import { useEffect, useRef, useState } from "react";
 import Product from "./Product";
+
 const productPerPage = 10;
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -56,7 +58,7 @@ const ProductList = () => {
       ))}
       {hasMore && (
         <div className="text-center text-3xl my-3" ref={loaderRef}>
-          Loading more product ....
+          <Spinner color="info" size="xl" />
         </div>
       )}
     </>
